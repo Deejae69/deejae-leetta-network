@@ -31,11 +31,40 @@ The DeeJae LeEtta Network is a next-generation professional networking platform 
 - **Community Governance** — D33J holders shape the future of the network
 - **DeFi Ready** — Fully composable with the Ethereum DeFi ecosystem
 - **MMO Gaming Integration** — D33J coin powers in-game economies with Reown wallet support
+- **AI Growth Agent** — Learns from campaign results to improve outreach and acquisition
+
+## Global Improvement Blueprint
+
+To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.club**, the network will evolve in four connected layers:
+
+1. **Self-Learning AI Agency**
+   - Track campaigns (social posts, ads, partnerships, newsletters)
+   - Score channels by conversion (wishlist signups, store purchases, club joins)
+   - Automatically prioritize highest-performing audience segments
+
+2. **Blockchain Trust + Rewards**
+   - Use on-chain reputation for creators, partners, and ambassadors
+   - Reward referrals and verified promotion activity with D33J utility incentives
+   - Publish transparent campaign and treasury milestones for community trust
+
+3. **Customer Acquisition Engine**
+   - MMO-focused funnels: teaser drops, early-access forms, and community quests
+   - Cross-promotion of arts/music into MMO worldbuilding campaigns
+   - Unified CTA flow into deejaeleetta.store and deejaeleetta.club
+
+4. **Investor Readiness**
+   - Maintain a public traction dashboard (users, retention, revenue signals)
+   - Define milestone-based funding asks tied to product delivery
+   - Keep a concise investor packet with token utility, roadmap, and growth metrics
 
 ## Roadmap
 
 - [x] D33J Coin deployed on Ethereum
 - [x] DeeJae LeEtta Network launch
+- [ ] AI customer-acquisition agent (MVP)
+- [ ] Cross-platform promotion pipeline for art, music, and MMO
+- [ ] deejaeleetta.store + deejaeleetta.club conversion dashboard
+- [ ] Investor traction dashboard + funding packet
 - [ ] CoinGecko & CoinMarketCap listing
 - [ ] Community governance portal
 - [ ] MMO game beta with D33J in-game currency
