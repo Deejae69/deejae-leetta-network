@@ -36,11 +36,31 @@ The DeeJae LeEtta Network is a next-generation professional networking platform 
 
 - [x] D33J Coin deployed on Ethereum
 - [x] DeeJae LeEtta Network launch
+- [x] Local AI agency CLI (lead outreach + self-learning)
 - [ ] CoinGecko & CoinMarketCap listing
 - [ ] Community governance portal
 - [ ] MMO game beta with D33J in-game currency
 - [ ] Solar farming & data center expansion (Uyo, Nigeria)
 - [ ] DeFi staking launch
+
+## AI Agency (Growth Automation)
+
+This repo includes a small, dependency-free CLI that helps you run outreach campaigns for:
+
+- Customers for `deejaeleetta.store` and `deejaeleetta.club`
+- MMO early access and community growth
+- Arts and music promotion
+- Investor pipeline building
+
+Docs:
+- `docs/ARCHITECTURE.md`
+- `docs/AI_AGENCY.md`
+
+Quick start:
+
+- Generate message drafts: `python3 scripts/deejae_agency.py generate --leads examples/leads.csv --out out/messages.jsonl`
+- Record outcomes (so it “learns”): `python3 scripts/deejae_agency.py record --lead-id L001 --segment investor --template-id investor_pitch --outcome replied`
+- View learning stats: `python3 scripts/deejae_agency.py report`
 
 ## Community
 

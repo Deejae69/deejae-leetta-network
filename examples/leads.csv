@@ -1,0 +1,6 @@
+id,name,handle,email,segment
+L001,Ada Example,adaexample,ada@example.com,investor
+L002,Sam Example,samexample,sam@example.com,mmo_player
+L003,Jordan Example,jordanexample,jordan@example.com,store_customer
+L004,Taylor Example,taylorexample,taylor@example.com,club_member
+

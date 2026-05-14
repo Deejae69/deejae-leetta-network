@@ -1,0 +1,8 @@
+# Local outputs
+out/
+workspace/
+*.jsonl
+
+# Python
+__pycache__/
+*.pyc
