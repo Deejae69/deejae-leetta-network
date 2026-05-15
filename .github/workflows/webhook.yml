@@ -1,0 +1,42 @@
+name: Webhook Handler
+
+on:
+  repository_dispatch:
+    types: [webhook-trigger]
+  workflow_dispatch:
+
+jobs:
+  handle-webhook:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Process webhook event
+      env:
+        WEBHOOK_PAYLOAD: ${{ toJson(github.event.client_payload) }}
+      run: |
+        echo "Processing webhook event..."
+        echo "$WEBHOOK_PAYLOAD"
+        # Run webhook processing script
+        if [ -f api/webhook_handler.py ]; then
+          python api/webhook_handler.py
+        fi
+
+    - name: Trigger agent tasks
+      run: |
+        echo "Triggering AI agent tasks based on webhook..."
+        # Run agent orchestrator if available
+        if [ -f scripts/run_agents.py ]; then
+          python scripts/run_agents.py
+        fi
