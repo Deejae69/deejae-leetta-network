@@ -48,7 +48,7 @@ To keep the network working continuously on revenue opportunities, product deliv
    - Keeps handoffs between marketing, investor, and support systems in sync
 4. **Forex Strategy Agent**
    - Produces market summaries, scenario analysis, and trade ideas
-   - Uses strict risk rules, review gates, and capital limits instead of promising guaranteed returns
+   - Applies strict risk rules, review gates, and capital limits to support responsible trading decisions
 5. **Investor Relations Agent**
    - Maintains traction updates, funding narratives, and milestone reporting
    - Converts operating data into investor-ready dashboards and summaries
