@@ -86,6 +86,7 @@ contract D33JCoin is IBEP20 {
 
     function increaseAllowance(address spender, uint256 addedValue) external returns (bool) {
         uint256 currentAllowance = _allowances[msg.sender][spender];
+        require(currentAllowance <= type(uint256).max - addedValue, "D33J: allowance overflow");
         uint256 updatedAllowance = currentAllowance + addedValue;
         _approve(msg.sender, spender, updatedAllowance);
         return true;
@@ -112,6 +113,7 @@ contract D33JCoin is IBEP20 {
         unchecked {
             _balances[sender] = senderBalance - amount;
         }
+        require(_balances[recipient] <= type(uint256).max - amount, "D33J: balance overflow");
         _balances[recipient] += amount;
 
         emit Transfer(sender, recipient, amount);
