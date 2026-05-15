@@ -1,0 +1,73 @@
+# Python Dependencies for DeeJae LeEtta Network
+
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.27
+
+# Blockchain & Web3
+web3==6.11.1
+eth-account==0.10.0
+eth-utils==2.3.1
+
+# Async & HTTP
+aiohttp==3.13.3
+httpx==0.25.0
+asyncio-mqtt==0.16.1
+
+# Data Processing
+numpy==1.24.3
+pandas==2.0.3
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.12.1
+
+# Caching & Queue
+redis==5.0.1
+celery==5.3.4
+
+# Configuration
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Authentication & Security
+python-jose[cryptography]==3.4.0
+passlib[bcrypt]==1.7.4
+cryptography>=42.0.0
+
+# API Documentation
+fastapi-swagger==0.2.0
+
+# Logging & Monitoring
+loguru==0.7.2
+prometheus-client==0.19.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+httpx==0.25.0
+
+# Social Media APIs
+discord.py==2.3.2
+praw==7.7.1  # Reddit
+tweepy==4.14.0  # Twitter
+python-linkedin-v2==0.2.0
+
+# Email
+sendgrid==6.10.0
+python-decouple==3.8
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+requests==2.31.0
+
+# Development Tools
+black==26.3.1
+flake8==6.1.0
+mypy==1.7.0
+isort==5.12.0
