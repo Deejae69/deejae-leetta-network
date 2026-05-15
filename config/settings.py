@@ -35,7 +35,7 @@ MAX_AGENT_RETRIES = int(os.getenv("MAX_AGENT_RETRIES", "3"))
 # Trading/Investment settings
 TRADING_MODE = os.getenv("TRADING_MODE", "paper")  # paper or live
 RISK_TOLERANCE = float(os.getenv("RISK_TOLERANCE", "0.02"))  # 2% max risk per trade
-MAX_POSITION_SIZE = float(os.getenv("MAX_POSITION_SIZE", "0.1"))  # 10% of portfolio
+MAX_POSITION_SIZE = float(os.getenv("MAX_POSITION_SIZE", "0.5"))  # 50% of portfolio
 STOP_LOSS_PERCENTAGE = float(os.getenv("STOP_LOSS_PERCENTAGE", "0.05"))  # 5%
 TAKE_PROFIT_PERCENTAGE = float(os.getenv("TAKE_PROFIT_PERCENTAGE", "0.15"))  # 15%
 
