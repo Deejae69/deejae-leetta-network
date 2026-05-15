@@ -24,6 +24,34 @@ The DeeJae LeEtta Network integrates blockchain technology with AI-driven autono
 - **Lead Scoring**: Automated qualification of prospects
 - **Performance Metrics**: Real-time analytics and reporting
 
+## NFC + QR Hybrid Engagement Design
+
+### Goal
+Enable a single campaign touchpoint that works in both physical and digital contexts for MMO onboarding, deejaeleetta.store conversions, and deejaeleetta.club membership growth.
+
+### Hybrid Pattern
+- **NFC Tap (Primary)**: Fast interaction for users with NFC-capable devices.
+- **QR Scan (Fallback)**: Universal access when NFC is unavailable or disabled.
+- **Shared Campaign ID**: NFC payload and QR URL resolve to the same campaign and audience segment.
+- **One-Time Session Token**: Issued at interaction start to prevent replay and duplicate reward abuse.
+
+### User Journey
+1. User taps NFC tag or scans QR code on flyer/booth/product card.
+2. API resolves campaign metadata (`source`, `location`, `audience_type`, `offer_type`).
+3. User lands on dynamic CTA page (MMO preregistration, store offer, or club join flow).
+4. Completion event is written to analytics and reward pipeline.
+5. AI agents retrain channel weights using conversion outcomes.
+
+### Data and Reward Mapping
+- **Attribution Fields**: `campaign_id`, `entry_method` (`nfc` or `qr`), `channel`, `conversion_type`.
+- **Reward Trigger**: Smart contract reward only after server-verified completion event.
+- **Fraud Controls**: Rate limiting, per-device/session deduplication, and signed callback verification.
+
+### Deployment Notes
+- Use tamper-resistant NFC tags with rotating signed payload URLs.
+- Generate dynamic QR codes per venue/creator for clean attribution.
+- Keep offline-safe fallback landing page for weak connectivity environments.
+
 ## AI Agent Modules
 
 ### Agent 1: MMO Customer Acquisition
