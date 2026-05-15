@@ -43,9 +43,12 @@ Enable a single campaign touchpoint that works in both physical and digital cont
 5. AI agents retrain channel weights using conversion outcomes.
 
 ### Data and Reward Mapping
-- **Attribution Fields**: `campaign_id`, `entry_method` (`nfc` or `qr`), `channel`, `conversion_type`.
+- **Attribution Fields**: `campaign_id`, `entry_method` (`nfc` or `qr`), `channel`, `source`, `location`, `audience_type`, `offer_type`, `conversion_type`.
 - **Reward Trigger**: Smart contract reward only after server-verified completion event.
-- **Fraud Controls**: Rate limiting, per-device/session deduplication, and signed callback verification.
+- **Fraud Controls**:
+  - Rate limiting: max 20 interaction starts per IP per 5 minutes.
+  - Deduplication: 24-hour dedup window per `campaign_id` + device fingerprint/session pair.
+  - Signature verification: HMAC-SHA256 signed callback payloads with timestamp freshness checks.
 
 ### Deployment Notes
 - Use tamper-resistant NFC tags with rotating signed payload URLs.
