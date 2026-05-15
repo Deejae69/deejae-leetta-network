@@ -47,8 +47,8 @@ To keep the network working continuously on revenue opportunities, product deliv
    - Connects forms, payments, CRM updates, and community events
    - Keeps handoffs between marketing, investor, and support systems in sync
 4. **Forex Strategy Agent**
-   - Produces market summaries, scenario analysis, and trade ideas
-   - Applies strict risk rules, review gates, and capital limits to support responsible trading decisions
+   - Produces market summaries, scenario analysis, and trade ideas for human review
+   - Applies strict risk rules, review gates, and capital limits to support responsible decision-making without autonomous execution
 5. **Investor Relations Agent**
    - Maintains traction updates, funding narratives, and milestone reporting
    - Converts operating data into investor-ready dashboards and summaries
@@ -84,7 +84,7 @@ To support the upcoming MMO, grow **deejaeleetta.store** + **deejaeleetta.club**
 
 - Add clear debugging loops for failed builds, broken integrations, and missed notifications
 - Standardize webhook events for lead capture, investor intake, order updates, and community actions
-- Keep forex strategy support observable with approval checkpoints, position limits, and reporting
+- Keep forex analysis and decision-support workflows observable with approval checkpoints, position limits, and reporting
 - Route every agent outcome into a shared dashboard so execution can be reviewed daily
 
 ## Roadmap
