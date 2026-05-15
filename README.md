@@ -81,4 +81,10 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
 
 *D33J coin is a utility token. This is not financial advice.*
 
+## Worth / 30000× math
+
+If you mean “30000×” as **per-token price**, `WORTH.md` explains the math and includes a small calculator:
+- `WORTH.md`
+- `python -m scripts.token_worth --help`
+
 **© 2026 DeeJae LeEtta Network. All rights reserved.**

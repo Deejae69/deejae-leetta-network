@@ -8,6 +8,11 @@
 pip install -r requirements.txt
 ```
 
+For running tests/lint locally:
+```bash
+pip install -r requirements-dev.txt
+```
+
 ### 2. Configure Environment
 
 ```bash
@@ -70,7 +75,7 @@ curl http://localhost:5000/api/metrics
 ### Run Tests
 
 ```bash
-PYTHONPATH=. pytest tests/ -v
+pytest tests/ -v
 ```
 
 ### View Logs
