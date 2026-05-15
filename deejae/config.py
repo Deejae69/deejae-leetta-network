@@ -12,6 +12,14 @@ _DEFAULTS: dict[str, Any] = {
     "log_level": "INFO",
     "network": "mainnet",
     "d33j_contract": "",
+    "tickblaze": {
+        "base_url": "",
+        "ping_path": "/",
+        "auth_header": "Authorization",
+        "auth_prefix": "Bearer",
+        "timeout_seconds": 10.0,
+        "api_key": "",
+    },
     "forex": {
         "paper_trade": True,
         "initial_balance": 10_000.0,
@@ -60,6 +68,21 @@ def load(path: str | Path | None = None) -> dict[str, Any]:
         cfg["webhook"]["url"] = wh_url
     if wh_secret := os.environ.get("DEEJAE_WEBHOOK_SECRET"):
         cfg["webhook"]["secret"] = wh_secret
+    if tb_url := os.environ.get("DEEJAE_TICKBLAZE_BASE_URL"):
+        cfg["tickblaze"]["base_url"] = tb_url
+    if tb_path := os.environ.get("DEEJAE_TICKBLAZE_PING_PATH"):
+        cfg["tickblaze"]["ping_path"] = tb_path
+    if tb_key := os.environ.get("DEEJAE_TICKBLAZE_API_KEY"):
+        cfg["tickblaze"]["api_key"] = tb_key
+    if tb_hdr := os.environ.get("DEEJAE_TICKBLAZE_AUTH_HEADER"):
+        cfg["tickblaze"]["auth_header"] = tb_hdr
+    if tb_prefix := os.environ.get("DEEJAE_TICKBLAZE_AUTH_PREFIX"):
+        cfg["tickblaze"]["auth_prefix"] = tb_prefix
+    if tb_timeout := os.environ.get("DEEJAE_TICKBLAZE_TIMEOUT_SECONDS"):
+        try:
+            cfg["tickblaze"]["timeout_seconds"] = float(tb_timeout)
+        except ValueError:
+            pass
 
     return cfg
 

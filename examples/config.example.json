@@ -5,6 +5,14 @@
   "network": "mainnet",
   "d33j_contract": "0xYourD33JContractAddressHere",
 
+  "tickblaze": {
+    "base_url": "https://api.tickblaze.example",
+    "ping_path": "/",
+    "auth_header": "Authorization",
+    "auth_prefix": "Bearer",
+    "timeout_seconds": 10.0
+  },
+
   "forex": {
     "paper_trade": true,
     "initial_balance": 10000.0,

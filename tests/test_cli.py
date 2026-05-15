@@ -5,6 +5,7 @@ from __future__ import annotations
 import sys
 import types
 import unittest
+from unittest import mock
 
 
 # ---------------------------------------------------------------------------
@@ -176,6 +177,71 @@ class TestCLI(unittest.TestCase):
     def test_no_subcommand_prints_help(self):
         rc = self._run()
         self.assertEqual(rc, 0)
+
+    def test_tickblaze_requires_base_url(self):
+        rc = self._run("tickblaze")
+        self.assertEqual(rc, 1)
+
+    def test_tickblaze_success(self):
+        class _Headers:
+            def __init__(self, d):
+                self._d = d
+
+            def items(self):
+                return list(self._d.items())
+
+            def get(self, key, default=None):
+                return self._d.get(key, default)
+
+        class _Resp:
+            def __init__(self, status, body=b"{}", headers=None):
+                self.status = status
+                self._body = body
+                self.headers = _Headers(headers or {"Content-Type": "application/json"})
+
+            def getcode(self):
+                return self.status
+
+            def read(self, _n=-1):
+                return self._body
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, exc_type, exc, tb):
+                return False
+
+        with mock.patch(
+            "deejae.tickblaze.urllib.request.urlopen",
+            return_value=_Resp(200, b"{\"ok\":true}"),
+        ):
+            rc = self._run(
+                "tickblaze", "--base-url", "https://example.com", "--path", "/ping"
+            )
+            self.assertEqual(rc, 0)
+
+    def test_tickblaze_auth_failure_exit_code(self):
+        import io
+        import urllib.error
+
+        err = urllib.error.HTTPError(
+            url="https://example.com/ping",
+            code=401,
+            msg="Unauthorized",
+            hdrs={"Content-Type": "text/plain"},
+            fp=io.BytesIO(b"unauthorized"),
+        )
+        with mock.patch("deejae.tickblaze.urllib.request.urlopen", side_effect=err):
+            rc = self._run(
+                "tickblaze",
+                "--base-url",
+                "https://example.com",
+                "--path",
+                "/ping",
+                "--api-key",
+                "secret",
+            )
+            self.assertEqual(rc, 2)
 
 
 if __name__ == "__main__":
