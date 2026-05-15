@@ -82,6 +82,35 @@ The network features four specialized AI agents that autonomously:
 - **10%** - Liquidity & Market Making
 
 ## 🏗️ Architecture
+- **On-Chain Identity** — Own your professional reputation on Ethereum
+- **Community Governance** — D33J holders shape the future of the network
+- **DeFi Ready** — Fully composable with the Ethereum DeFi ecosystem
+- **MMO Gaming Integration** — D33J coin powers in-game economies with Reown wallet support
+- **AI Growth Agent** — Learns from campaign results to improve outreach and acquisition
+
+## Global Improvement Blueprint
+
+To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.club**, the network will evolve in four connected layers:
+
+1. **Self-Learning AI Agency**
+   - Track campaigns (social posts, ads, partnerships, newsletters)
+   - Score channels by conversion (wishlist signups, store purchases, club joins)
+   - Automatically prioritize highest-performing audience segments
+
+2. **Blockchain Trust + Rewards**
+   - Use on-chain reputation for creators, partners, and ambassadors
+   - Reward referrals and verified promotion activity with D33J utility incentives
+   - Publish transparent campaign and treasury milestones for community trust
+
+3. **Customer Acquisition Engine**
+   - MMO-focused funnels: teaser drops, early-access forms, and community quests
+   - Cross-promotion of arts/music into MMO worldbuilding campaigns
+   - Unified CTA flow into deejaeleetta.store and deejaeleetta.club
+
+4. **Investor Readiness**
+   - Maintain a public traction dashboard (users, retention, revenue signals)
+   - Define milestone-based funding asks tied to product delivery
+   - Keep a concise investor packet with token utility, roadmap, and growth metrics
 
 The system integrates:
 
@@ -106,7 +135,6 @@ The system integrates:
 │    Smart Contracts: D33J Token + AI Agent Coordinator       │
 └─────────────────────────────────────────────────────────────┘
 ```
-
 See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
 
 ## 📋 Key Features
