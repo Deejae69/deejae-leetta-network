@@ -1,9 +1,9 @@
 # Python Dependencies for DeeJae LeEtta Network
 
 # Web Framework
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-python-multipart==0.0.6
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.27
 
 # Blockchain & Web3
 web3==6.11.1
@@ -11,7 +11,7 @@ eth-account==0.10.0
 eth-utils==2.3.1
 
 # Async & HTTP
-aiohttp==3.9.0
+aiohttp==3.13.3
 httpx==0.25.0
 asyncio-mqtt==0.16.1
 
@@ -34,9 +34,9 @@ pydantic==2.5.0
 pydantic-settings==2.1.0
 
 # Authentication & Security
-python-jose[cryptography]==3.3.0
+python-jose[cryptography]==3.4.0
 passlib[bcrypt]==1.7.4
-python-multipart==0.0.6
+cryptography>=42.0.0
 
 # API Documentation
 fastapi-swagger==0.2.0
@@ -67,7 +67,7 @@ pytz==2023.3
 requests==2.31.0
 
 # Development Tools
-black==23.11.0
+black==26.3.1
 flake8==6.1.0
 mypy==1.7.0
 isort==5.12.0
