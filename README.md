@@ -31,11 +31,34 @@ The DeeJae LeEtta Network is a next-generation professional networking platform 
 - **Community Governance** — D33J holders shape the future of the network
 - **DeFi Ready** — Fully composable with the Ethereum DeFi ecosystem
 - **MMO Gaming Integration** — D33J coin powers in-game economies with Reown wallet support
-- **AI Growth Agent** — Learns from campaign results to improve outreach and acquisition
+- **Six-Agent Revenue Operations** — Specialized AI agents coordinate growth, delivery, reporting, and trading support
+
+## Six-Agent Operating Model
+
+To keep the network working continuously on revenue opportunities, product delivery, and investor readiness, DeeJae LeEtta Network will run six specialized AI agents:
+
+1. **Growth Agent**
+   - Finds leads, drafts outreach, and scores campaign performance
+   - Learns which channels create the strongest conversion signals
+2. **Build + Debug Agent**
+   - Monitors releases, failed workflows, and product issues
+   - Prioritizes fixes that unblock launches, onboarding, and partner delivery
+3. **Webhook Orchestration Agent**
+   - Connects forms, payments, CRM updates, and community events
+   - Keeps handoffs between marketing, investor, and support systems in sync
+4. **Forex Strategy Agent**
+   - Produces market summaries, scenario analysis, and trade ideas
+   - Uses strict risk rules, review gates, and capital limits instead of promising guaranteed returns
+5. **Investor Relations Agent**
+   - Maintains traction updates, funding narratives, and milestone reporting
+   - Converts operating data into investor-ready dashboards and summaries
+6. **Treasury + Compliance Agent**
+   - Tracks wallet activity, reward distributions, and audit trails
+   - Supports transparent reporting for token, revenue, and funding operations
 
 ## Global Improvement Blueprint
 
-To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.club**, the network will evolve in four connected layers:
+To support the upcoming MMO, grow **deejaeleetta.store** + **deejaeleetta.club**, and improve investor operations, the network will evolve in four connected layers powered by the six-agent model above:
 
 1. **Self-Learning AI Agency**
    - Track campaigns (social posts, ads, partnerships, newsletters)
@@ -57,14 +80,24 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
    - Define milestone-based funding asks tied to product delivery
    - Keep a concise investor packet with token utility, roadmap, and growth metrics
 
+## Workflow Reliability Priorities
+
+- Add clear debugging loops for failed builds, broken integrations, and missed notifications
+- Standardize webhook events for lead capture, investor intake, order updates, and community actions
+- Keep forex strategy support observable with approval checkpoints, position limits, and reporting
+- Route every agent outcome into a shared dashboard so execution can be reviewed daily
+
 ## Roadmap
 
 - [x] D33J Coin deployed on Ethereum
 - [x] DeeJae LeEtta Network launch
-- [ ] AI customer-acquisition agent (MVP)
+- [ ] Six-agent operating network (MVP)
 - [ ] Cross-platform promotion pipeline for art, music, and MMO
 - [ ] deejaeleetta.store + deejaeleetta.club conversion dashboard
 - [ ] Investor traction dashboard + funding packet
+- [ ] Debugging and build workflow automation
+- [ ] Webhook event layer for growth, investor, and support systems
+- [ ] Forex strategy reporting with risk controls
 - [ ] CoinGecko & CoinMarketCap listing
 - [ ] Community governance portal
 - [ ] MMO game beta with D33J in-game currency
