@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deejae-leetta-network"
+version = "0.1.0"
+description = "DeeJae LeEtta Network — autonomous agent runner and forex paper-trade CLI"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["deejae", "d33j", "ethereum", "agents", "forex", "cli"]
+
+[project.scripts]
+deejae = "deejae.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["deejae*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

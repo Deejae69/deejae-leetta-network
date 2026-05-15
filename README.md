@@ -77,6 +77,21 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
 - 💼 LinkedIn: DeeJae LeEtta Network
 - 📸 Instagram: @DeeJaeLeEtta
 
+## Tickblaze API connection test
+
+The CLI includes a stdlib-only connectivity check for Tickblaze.
+
+Examples:
+
+- `python -m deejae tickblaze --base-url https://api.tickblaze.example --path /`
+- `DEEJAE_TICKBLAZE_BASE_URL=https://api.tickblaze.example DEEJAE_TICKBLAZE_API_KEY=... python -m deejae tickblaze --path / --show-body`
+
+Exit codes:
+- `0` reachable (and not 5xx; if an API key is provided, auth is not 401/403)
+- `1` not reachable / missing base URL
+- `2` reachable but auth failed (401/403) with an API key
+- `3` reachable but server error (5xx)
+
 ---
 
 *D33J coin is a utility token. This is not financial advice.*

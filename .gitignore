@@ -1,0 +1,23 @@
+# Byte-compiled / optimised files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment config
+.env
+config.json
+
+# Editor artefacts
+.DS_Store
+*.swp

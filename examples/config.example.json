@@ -1,0 +1,39 @@
+{
+  "_comment": "Copy to config.json and edit — all values are optional; omitted keys use built-in defaults.",
+
+  "log_level": "INFO",
+  "network": "mainnet",
+  "d33j_contract": "0xYourD33JContractAddressHere",
+
+  "tickblaze": {
+    "base_url": "https://api.tickblaze.example",
+    "ping_path": "/",
+    "auth_header": "Authorization",
+    "auth_prefix": "Bearer",
+    "timeout_seconds": 10.0
+  },
+
+  "forex": {
+    "paper_trade": true,
+    "initial_balance": 10000.0,
+    "max_risk_pct": 2.0,
+    "symbols": ["EURUSD", "GBPUSD", "USDJPY"]
+  },
+
+  "agents": {
+    "run_interval_seconds": 3600,
+    "enabled": [
+      "mmo_customer",
+      "ecommerce",
+      "arts_marketing",
+      "investor_relations",
+      "trading_strategy",
+      "campaign_optimizer"
+    ]
+  },
+
+  "webhook": {
+    "url": "https://example.com/your-webhook-endpoint",
+    "secret": "replace-with-a-strong-secret"
+  }
+}
