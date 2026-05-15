@@ -99,7 +99,7 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
 
 2. **Blockchain Trust + Rewards**
    - Use on-chain reputation for creators, partners, and ambassadors
-   - Reward referrals and verified promotion activity with D33J token rewards, governance participation, and premium feature access
+   - Reward referrals and verified promotion activity with D33J tokens, governance participation, and premium feature access
    - Publish transparent campaign and treasury milestones for community trust
 
 3. **Customer Acquisition Engine**
