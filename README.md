@@ -1,23 +1,31 @@
 # DeeJae LeEtta Network 🌐
 
-> **Decentralized professional networking powered by the Ethereum blockchain and D33J coin.**
+> **Decentralized professional networking powered by the BNB Smart Chain and D33J coin.**
 
 ---
 
 ## What is the DeeJae LeEtta Network?
 
-The DeeJae LeEtta Network is a next-generation professional networking platform built on Ethereum. Unlike traditional platforms that harvest your data and rent you your connections, we give users true ownership over their professional identity — on-chain, verifiable, and censorship-resistant.
+The DeeJae LeEtta Network is a next-generation professional networking platform built on BNB Smart Chain (BSC). Unlike traditional platforms that harvest your data and rent you your connections, we give users true ownership over their professional identity — on-chain, verifiable, and censorship-resistant.
 
 ## D33J Coin 💰
 
-**D33J** is an ERC-20 utility and governance token on the Ethereum network.
+**D33J** is a BEP-20 utility and governance token for the BNB Smart Chain.
 
 | Property | Details |
 |----------|---------|
 | Token Name | D33J Coin |
-| Standard | ERC-20 |
-| Blockchain | Ethereum |
+| Standard | BEP-20 |
+| Blockchain | BNB Smart Chain |
 | Use Case | Utility, Governance, Rewards |
+
+### BSC Contract
+- Source: `contracts/D33JCoin.sol`
+- Token name: `D33J Coin`
+- Symbol: `D33J`
+- Decimals: `18`
+- Constructor inputs: `initialOwner`, `initialSupply`
+- Supply model: fixed supply minted once to the initial owner during deployment
 
 ### D33J Coin Utility
 - 🔐 Access premium network features
@@ -27,7 +35,7 @@ The DeeJae LeEtta Network is a next-generation professional networking platform 
 
 ## Key Features
 
-- **On-Chain Identity** — Own your professional reputation on Ethereum
+- **On-Chain Identity** — Own your professional reputation on BNB Smart Chain
 - **Community Governance** — D33J holders shape the future of the network
 - **DeFi Ready** — Fully composable with the Ethereum DeFi ecosystem
 - **MMO Gaming Integration** — D33J coin powers in-game economies with Reown wallet support
@@ -59,7 +67,7 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
 
 ## Roadmap
 
-- [x] D33J Coin deployed on Ethereum
+- [x] D33J Coin contract created for BNB Smart Chain
 - [x] DeeJae LeEtta Network launch
 - [ ] AI customer-acquisition agent (MVP)
 - [ ] Cross-platform promotion pipeline for art, music, and MMO
