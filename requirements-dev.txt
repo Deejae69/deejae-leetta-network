@@ -1,0 +1,9 @@
+# Development / QA dependencies
+pytest==7.4.3
+pytest-cov==4.1.0
+flake8==6.1.0
+mypy==1.7.1
+black==26.3.1
+bandit==1.7.5
+# safety 2.x pins packaging<22 which conflicts with modern toolchains
+safety==3.7.0

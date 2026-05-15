@@ -54,6 +54,11 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+For development (tests/lint/security tooling):
+```bash
+pip install -r requirements-dev.txt
+```
+
 4. Copy environment configuration:
 ```bash
 cp .env.example .env
