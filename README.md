@@ -37,7 +37,7 @@ The DeeJae LeEtta Network is a next-generation professional networking platform 
 
 - **On-Chain Identity** — Own your professional reputation on BNB Smart Chain
 - **Community Governance** — D33J holders shape the future of the network
-- **DeFi Ready** — Fully composable with the Ethereum DeFi ecosystem
+- **DeFi Ready** — Fully composable with the BNB Chain DeFi ecosystem
 - **MMO Gaming Integration** — D33J coin powers in-game economies with Reown wallet support
 - **AI Growth Agent** — Learns from campaign results to improve outreach and acquisition
 
