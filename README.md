@@ -85,7 +85,7 @@ The network features four specialized AI agents that autonomously:
 - **On-Chain Identity** — Own your professional reputation on Ethereum
 - **Community Governance** — D33J holders shape the future of the network
 - **DeFi Ready** — Fully composable with the Ethereum DeFi ecosystem
-- **MMO Gaming Integration** — D33J coin powers in-game economies with Reown wallet support
+- **MMO Gaming Integration** — D33J coin powers in-game economies with Reown (WalletConnect) wallet support
 - **AI Growth Agent** — Learns from campaign results to improve outreach and acquisition
 
 ## Global Improvement Blueprint
@@ -99,7 +99,7 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
 
 2. **Blockchain Trust + Rewards**
    - Use on-chain reputation for creators, partners, and ambassadors
-   - Reward referrals and verified promotion activity with D33J utility incentives
+   - Reward referrals and verified promotion activity with D33J token rewards, governance participation, and premium feature access
    - Publish transparent campaign and treasury milestones for community trust
 
 3. **Customer Acquisition Engine**
@@ -108,7 +108,7 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
    - Unified CTA flow into deejaeleetta.store and deejaeleetta.club
 
 4. **Investor Readiness**
-   - Maintain a public traction dashboard (users, retention, revenue signals)
+   - Maintain a public traction dashboard (users, retention, transaction volume, and conversion rates)
    - Define milestone-based funding asks tied to product delivery
    - Keep a concise investor packet with token utility, roadmap, and growth metrics
 
