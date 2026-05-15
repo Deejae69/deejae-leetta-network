@@ -79,7 +79,7 @@ def login():
 
     if not verify_password(password, user.password_hash):
         audit_log.log_event(username, "login", "failure",
-                            details={"reason": "bad_password"}, ip_address=client_ip)
+                            details={"reason": "invalid_credentials"}, ip_address=client_ip)
         return jsonify({"error": "Invalid credentials"}), 401
 
     # MFA required and user has a secret configured
@@ -119,7 +119,7 @@ def login_mfa():
 
     if not verify_totp(pending["totp_secret"], code):
         audit_log.log_event(pending["username"], "login_mfa", "failure",
-                            details={"reason": "bad_totp"}, ip_address=client_ip)
+                            details={"reason": "invalid_totp_code"}, ip_address=client_ip)
         return jsonify({"error": "Invalid MFA code"}), 401
 
     _mfa_pending.pop(nonce, None)
