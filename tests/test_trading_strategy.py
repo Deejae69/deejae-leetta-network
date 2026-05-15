@@ -7,6 +7,7 @@ from scripts.trading_strategy import (
     RiskManager, MomentumStrategy, MeanReversionStrategy,
     TradingEngine, SignalType
 )
+from config.settings import MAX_POSITION_SIZE
 
 
 def test_risk_manager_initialization():
@@ -28,7 +29,7 @@ def test_risk_manager_position_size():
     position_size = rm.calculate_position_size(portfolio_value, entry_price, stop_loss_price)
 
     assert position_size > 0
-    assert position_size <= (portfolio_value * 0.1) / entry_price
+    assert position_size <= (portfolio_value * MAX_POSITION_SIZE) / entry_price
 
 
 def test_momentum_strategy():
