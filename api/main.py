@@ -1,6 +1,7 @@
 """
 REST API for DeeJae LeEtta Network
-Provides endpoints for agents, campaigns, and trading strategies
+Provides endpoints for agents, campaigns, trading strategies, admin dashboard,
+and developer debugging tools.
 """
 
 from flask import Flask, request, jsonify
@@ -8,11 +9,17 @@ from flask_cors import CORS
 from config.logging_config import setup_logger
 from config.error_handlers import ErrorContext, handle_errors
 from config.settings import API_HOST, API_PORT, API_DEBUG
+from api.admin import admin_bp
+from api.dev_tools import dev_bp
 
 logger = setup_logger(__name__)
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for dashboard access
+
+# Register admin dashboard and developer tools blueprints
+app.register_blueprint(admin_bp)
+app.register_blueprint(dev_bp)
 
 
 @app.route('/api/health', methods=['GET'])

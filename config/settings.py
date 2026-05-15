@@ -48,6 +48,20 @@ API_HOST = os.getenv("API_HOST", "0.0.0.0")
 API_PORT = int(os.getenv("API_PORT", "5000"))
 API_DEBUG = os.getenv("API_DEBUG", "False").lower() == "true"
 
+# Environment: development | staging | production
+ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
+
+# Auth / JWT settings
+JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "change-me-in-production")
+JWT_ACCESS_TOKEN_EXPIRES = int(os.getenv("JWT_ACCESS_TOKEN_EXPIRES", "3600"))  # seconds
+
+# Admin / user store
+# Comma-separated list of admin usernames (passwords managed via ADMIN_PASSWORD_HASH_<USERNAME>)
+ADMIN_USERS = os.getenv("ADMIN_USERS", "admin").split(",")
+
+# MFA: set to "True" to require TOTP for admin logins
+MFA_REQUIRED = os.getenv("MFA_REQUIRED", "False").lower() == "true"
+
 # Database settings (if needed)
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///deejae_network.db")
 
