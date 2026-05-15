@@ -46,8 +46,8 @@ Enable a single campaign touchpoint that works in both physical and digital cont
 - **Attribution Fields**: `campaign_id`, `entry_method` (`nfc` or `qr`), `channel`, `source`, `location`, `audience_type`, `offer_type`, `conversion_type`.
 - **Reward Trigger**: Smart contract reward only after server-verified completion event.
 - **Fraud Controls**:
-  - Rate limiting: max 20 interaction starts per IP per 5 minutes.
-  - Deduplication: 24-hour dedup window per `campaign_id` + device fingerprint/session pair.
+  - Rate limiting: max 20 interaction starts per IP per 5 minutes, plus per-account/device thresholds when identity is available.
+  - Deduplication: 24-hour dedup window per `campaign_id` + device fingerprint/session pair (prevents reward farming while still allowing daily campaign re-engagement).
   - Signature verification: HMAC-SHA256 signed callback payloads with timestamp freshness checks.
 
 ### Deployment Notes
