@@ -33,8 +33,16 @@ class PaperTrader:
         price: float,
         stop_pips: float = 20,
         pip_value: float = 10.0,
+        pip_size: float = 0.0001,
     ) -> dict[str, Any]:
-        """Open a new paper position and return a trade record."""
+        """Open a new paper position and return a trade record.
+
+        Parameters
+        ----------
+        pip_size:
+            Price movement per pip.  Standard 4-decimal pairs use 0.0001;
+            JPY pairs (e.g. USDJPY) use 0.01.
+        """
         if action not in ("buy", "sell"):
             raise ValueError(f"Unknown action: {action!r}")
 
@@ -45,6 +53,7 @@ class PaperTrader:
             "entry_price": price,
             "stop_pips": stop_pips,
             "pip_value": pip_value,
+            "pip_size": pip_size,
             "pnl": 0.0,
             "status": "open",
         }
@@ -59,7 +68,8 @@ class PaperTrader:
         pos = self.open_positions.pop(index)
         direction = 1 if pos["action"] == "buy" else -1
         price_diff = (exit_price - pos["entry_price"]) * direction
-        pips = price_diff / 0.0001  # standard pip for 4-decimal pairs
+        pip_size = pos.get("pip_size", 0.0001)  # JPY pairs use 0.01
+        pips = price_diff / pip_size
         pnl = round(pips * pos["pip_value"] * pos["size"], 2)
 
         pos["exit_price"] = exit_price

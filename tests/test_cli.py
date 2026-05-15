@@ -19,7 +19,7 @@ class TestConfig(unittest.TestCase):
         self.assertIn("forex", cfg)
         self.assertIn("agents", cfg)
 
-    def test_env_override(self, monkeypatch=None):
+    def test_env_override(self):
         import os, deejae.config as cfg_mod
         os.environ["DEEJAE_LOG_LEVEL"] = "DEBUG"
         os.environ["DEEJAE_NETWORK"] = "testnet"
