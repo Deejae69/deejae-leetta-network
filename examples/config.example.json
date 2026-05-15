@@ -1,0 +1,62 @@
+{
+  "log": { "level": "INFO", "format": "json" },
+  "webhooks": {
+    "default_url": null,
+    "timeout_seconds": 10,
+    "max_retries": 2
+  },
+  "agents": [
+    {
+      "id": "heartbeat_1",
+      "class": "deejae.agents.heartbeat.HeartbeatAgent",
+      "enabled": true,
+      "interval_seconds": 30,
+      "config": {}
+    },
+    {
+      "id": "forex_data",
+      "class": "deejae.agents.forex_data.ForexDataAgent",
+      "enabled": true,
+      "interval_seconds": 60,
+      "config": { "csv_path": "examples/eurusd_sample.csv", "limit": 500, "state_path": ".deejae/state.json" }
+    },
+    {
+      "id": "forex_strategy",
+      "class": "deejae.agents.forex_strategy.ForexStrategyAgent",
+      "enabled": true,
+      "interval_seconds": 60,
+      "config": {
+        "symbol": "EURUSD",
+        "state_path": ".deejae/state.json",
+        "strategy": { "name": "ma_crossover", "params": { "fast_period": 3, "slow_period": 6 } }
+      }
+    },
+    {
+      "id": "forex_risk",
+      "class": "deejae.agents.forex_risk.ForexRiskAgent",
+      "enabled": true,
+      "interval_seconds": 60,
+      "config": {
+        "state_path": ".deejae/state.json",
+        "stop_pips": 25,
+        "risk_pct": 0.01,
+        "equity": 10000,
+        "pip_value_per_unit": 0.0001
+      }
+    },
+    {
+      "id": "forex_papertrade",
+      "class": "deejae.agents.forex_papertrade.ForexPaperTradeAgent",
+      "enabled": true,
+      "interval_seconds": 60,
+      "config": { "state_path": ".deejae/state.json" }
+    },
+    {
+      "id": "build_debug",
+      "class": "deejae.agents.build_debug.BuildDebugAgent",
+      "enabled": true,
+      "interval_seconds": 300,
+      "config": { "run_self_check": true, "repo_root": "." }
+    }
+  ]
+}
