@@ -79,6 +79,40 @@ To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.clu
 
 ---
 
+## 6-Agent Income Ops (MVP)
+
+This repo now includes a minimal **6-agent runner** focused on:
+- Always-on operational workflows (debug/build reports)
+- Webhook-based notifications
+- Forex strategy signals + risk sizing + paper trading loop
+
+### Quick Start
+
+Run once (good for debugging):
+
+```bash
+python -m deejae --config examples/config.example.json --once
+```
+
+Run continuously:
+
+```bash
+python -m deejae --config examples/config.example.json
+```
+
+### Webhooks
+
+Set `webhooks.default_url` in your config to any endpoint that accepts a JSON POST payload (Discord/Slack/custom).
+
+### Agents Included
+
+1. `HeartbeatAgent` – liveness pings (optional webhook)
+2. `ForexDataAgent` – loads candle data from CSV into `.deejae/state.json`
+3. `ForexStrategyAgent` – generates `long|short|flat` signals (MA crossover or RSI mean reversion)
+4. `ForexRiskAgent` – suggests position size from equity + risk %
+5. `ForexPaperTradeAgent` – simple entry/exit state machine for paper trading
+6. `BuildDebugAgent` – periodic `unittest` self-checks + environment report
+
 *D33J coin is a utility token. This is not financial advice.*
 
 **© 2026 DeeJae LeEtta Network. All rights reserved.**
