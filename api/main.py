@@ -11,15 +11,17 @@ from config.error_handlers import ErrorContext, handle_errors
 from config.settings import API_HOST, API_PORT, API_DEBUG
 from api.admin import admin_bp
 from api.dev_tools import dev_bp
+from api.growth import growth_bp
 
 logger = setup_logger(__name__)
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for dashboard access
 
-# Register admin dashboard and developer tools blueprints
+# Register admin dashboard, developer tools, and growth blueprints
 app.register_blueprint(admin_bp)
 app.register_blueprint(dev_bp)
+app.register_blueprint(growth_bp)
 
 
 @app.route('/api/health', methods=['GET'])
@@ -45,6 +47,7 @@ def get_agents():
                 {"name": "Investor Relations Agent", "status": "active", "tasks_completed": 0},
                 {"name": "Trading Strategy Agent", "status": "active", "tasks_completed": 0},
                 {"name": "Campaign Optimizer Agent", "status": "active", "tasks_completed": 0},
+                {"name": "Growth Hacker Agent", "status": "active", "tasks_completed": 0},
             ]
             return jsonify({"agents": agents}), 200
     except Exception as e:
@@ -109,7 +112,7 @@ def get_metrics():
         with ErrorContext("Fetching network metrics"):
             metrics = {
                 "total_users": 0,
-                "active_agents": 6,
+                "active_agents": 7,
                 "d33j_holders": 0,
                 "total_campaigns": 0,
                 "conversion_rate": 0.0,

@@ -10,7 +10,7 @@ def test_orchestrator_initialization():
     """Test orchestrator initialization"""
     orchestrator = AgentOrchestrator()
 
-    assert len(orchestrator.agents) == 6
+    assert len(orchestrator.agents) == 7
     assert orchestrator.is_running is False
 
 
@@ -47,5 +47,5 @@ def test_orchestrator_network_metrics():
     metrics = orchestrator.get_network_metrics()
 
     assert "total_agents" in metrics
-    assert metrics["total_agents"] == 6
+    assert metrics["total_agents"] == 7
     assert "active_agents" in metrics
