@@ -156,10 +156,10 @@ class ECommerceClientFinder(BaseAgent):
         product_views = funnel_data.get("product_views", 300)
         add_to_cart = funnel_data.get("add_to_cart", 100)
 
-        if product_views / visitors < 0.4:
+        if visitors > 0 and product_views / visitors < 0.4:
             recommendations.append("Improve homepage engagement and product discovery")
 
-        if add_to_cart / product_views < 0.3:
+        if product_views > 0 and add_to_cart / product_views < 0.3:
             recommendations.append("Enhance product pages with better images and descriptions")
 
         if len(recommendations) == 0:

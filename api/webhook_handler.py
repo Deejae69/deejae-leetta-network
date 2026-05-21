@@ -49,7 +49,7 @@ def health_check():
 
 
 @app.route('/webhook/github', methods=['POST'])
-@handle_errors(error_type=Exception, default_return=(jsonify({"error": "Internal error"}), 500))
+@handle_errors(error_type=Exception, default_return=({"error": "Internal error"}, 500))
 def handle_github_webhook():
     """
     Handle GitHub webhooks (push, PR, issues, etc.)
@@ -82,7 +82,7 @@ def handle_github_webhook():
 
 
 @app.route('/webhook/trading', methods=['POST'])
-@handle_errors(error_type=Exception, default_return=(jsonify({"error": "Internal error"}), 500))
+@handle_errors(error_type=Exception, default_return=({"error": "Internal error"}, 500))
 def handle_trading_webhook():
     """
     Handle trading signals and market data webhooks
@@ -110,7 +110,7 @@ def handle_trading_webhook():
 
 
 @app.route('/webhook/campaign', methods=['POST'])
-@handle_errors(error_type=Exception, default_return=(jsonify({"error": "Internal error"}), 500))
+@handle_errors(error_type=Exception, default_return=({"error": "Internal error"}, 500))
 def handle_campaign_webhook():
     """
     Handle campaign events (conversions, signups, purchases)
