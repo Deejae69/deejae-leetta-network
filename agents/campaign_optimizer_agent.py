@@ -222,8 +222,10 @@ class CampaignOptimizerAgent(BaseAgent):
         """Identify optimization opportunities"""
         opportunities = []
 
-        ctr = metrics.get("clicks", 0) / metrics.get("impressions", 1)
-        conversion_rate = metrics.get("conversions", 0) / metrics.get("clicks", 1)
+        impressions = metrics.get("impressions", 0)
+        clicks = metrics.get("clicks", 0)
+        ctr = clicks / impressions if impressions > 0 else 0
+        conversion_rate = metrics.get("conversions", 0) / clicks if clicks > 0 else 0
 
         if ctr < 0.02:
             opportunities.append("Improve ad creative and targeting to increase CTR")
