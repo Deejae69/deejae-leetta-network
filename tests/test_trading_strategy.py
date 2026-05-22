@@ -201,20 +201,11 @@ def test_mean_reversion_strategy_analyze_market():
 def test_mean_reversion_strategy_buy_signal():
     """Price far below mean generates BUY signal"""
     strategy = MeanReversionStrategy()
-    # Mean=100, std≈0 when all same price; use varied prices
-    historical = [100.0] * 28 + [100.0, 100.0]
-    market_data = {
-        "symbol": "MR",
-        "price": 50.0,  # Very far below mean
-        "historical_prices": historical,
-    }
-    # Force z_score < -2 by using a price far from mean with real std
     base = [100.0 + i * 0.1 for i in range(30)]
     market_data = {"symbol": "MR", "price": 80.0, "historical_prices": base}
-    analysis = strategy.analyze_market(market_data)
-    if analysis["std"] > 0:
-        # Just verify the z_score direction
-        assert analysis["z_score"] < 0
+    signal = strategy.generate_signal(market_data)
+    assert signal is not None
+    assert signal.signal_type == SignalType.BUY
 
 
 def test_mean_reversion_strategy_sell_signal():
@@ -222,9 +213,9 @@ def test_mean_reversion_strategy_sell_signal():
     strategy = MeanReversionStrategy()
     base = [100.0 + i * 0.1 for i in range(30)]
     market_data = {"symbol": "MR", "price": 115.0, "historical_prices": base}
-    analysis = strategy.analyze_market(market_data)
-    if analysis["std"] > 0:
-        assert analysis["z_score"] > 0
+    signal = strategy.generate_signal(market_data)
+    assert signal is not None
+    assert signal.signal_type == SignalType.SELL
 
 
 def test_mean_reversion_strategy_insufficient_data():
