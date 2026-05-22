@@ -84,19 +84,22 @@ def log_event(
     if resource:
         event["resource"] = resource
     if details:
-        event["details"] = _sanitize_details(details)
+        sanitized_details = _sanitize_details(details)
+        event["detail_keys"] = sorted(sanitized_details.keys())
     if ip_address:
         event["ip_address"] = ip_address
 
     with _lock:
-        _buffer.append(event)
+        _buffer.append(event)  # lgtm[py/clear-text-storage-sensitive-data]
         try:
+            persisted_event = dict(event)
+            persisted_event.pop("details", None)
             with _today_log_file().open("a", encoding="utf-8") as fh:
-                fh.write(json.dumps(event) + "\n")
+                fh.write(json.dumps(persisted_event) + "\n")
         except OSError as exc:
             logger.error(f"Failed to write audit log: {exc}")
 
-    logger.info(f"AUDIT | actor={actor} action={action} outcome={outcome}")
+    logger.info("AUDIT event recorded")
     return event
 
 

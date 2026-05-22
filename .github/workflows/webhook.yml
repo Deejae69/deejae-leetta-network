@@ -5,6 +5,9 @@ on:
     types: [webhook-trigger]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   handle-webhook:
     runs-on: ubuntu-latest
