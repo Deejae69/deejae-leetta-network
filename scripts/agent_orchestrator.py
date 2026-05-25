@@ -13,6 +13,7 @@ from agents.arts_marketing_agent import ArtsMarketingAgent
 from agents.investor_relations_agent import InvestorRelationsAgent
 from agents.trading_strategy_agent import TradingStrategyAgent
 from agents.campaign_optimizer_agent import CampaignOptimizerAgent
+from agents.growth_hacker_agent import GrowthHackerAgent
 from config.logging_config import setup_logger
 from config.error_handlers import ErrorContext
 
@@ -27,7 +28,7 @@ class AgentOrchestrator:
         self.task_queue = Queue()
         self.is_running = False
         self._initialize_agents()
-        logger.info("AgentOrchestrator initialized with 6 agents")
+        logger.info("AgentOrchestrator initialized with 7 agents")
 
     def _initialize_agents(self):
         """Initialize all agents"""
@@ -37,7 +38,8 @@ class AgentOrchestrator:
             ArtsMarketingAgent(),
             InvestorRelationsAgent(),
             TradingStrategyAgent(),
-            CampaignOptimizerAgent()
+            CampaignOptimizerAgent(),
+            GrowthHackerAgent(),
         ]
 
     def start(self):
@@ -151,7 +153,15 @@ class AgentOrchestrator:
             "optimize_budget": "Campaign Optimizer Agent",
             "predict_performance": "Campaign Optimizer Agent",
             "recommend_channels": "Campaign Optimizer Agent",
-            "analyze_conversion": "Campaign Optimizer Agent"
+            "analyze_conversion": "Campaign Optimizer Agent",
+
+            # Growth Hacker Agent tasks
+            "run_viral_loop":    "Growth Hacker Agent",
+            "create_referral":   "Growth Hacker Agent",
+            "record_referral":   "Growth Hacker Agent",
+            "run_ab_test":       "Growth Hacker Agent",
+            "analyse_retention": "Growth Hacker Agent",
+            "growth_experiment": "Growth Hacker Agent",
         }
 
         agent_name = task_routing.get(task_type)
