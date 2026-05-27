@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeeJae LeEtta Network - AI Agency Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-change {
+            font-size: 14px;
+            color: #10b981;
+        }
+
+        .stat-change.negative {
+            color: #ef4444;
+        }
+
+        .agents-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .agent-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .agent-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .agent-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .agent-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .agent-status.active {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .agent-status.paused {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+        }
+
+        .agent-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 5px;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .metric-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .chart-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .activity-log {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .log-item {
+            padding: 15px;
+            border-left: 3px solid #667eea;
+            background: #f9fafb;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .log-time {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .log-message {
+            color: #333;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .live-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 DeeJae LeEtta Network - AI Agency Dashboard</h1>
+            <p class="subtitle">
+                <span class="live-indicator"></span>
+                Real-time monitoring of autonomous AI agents and network performance
+            </p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Leads Generated</div>
+                <div class="stat-value" id="total-leads">2,547</div>
+                <div class="stat-change">↑ 12.3% from last week</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Active Campaigns</div>
+                <div class="stat-value" id="active-campaigns">18</div>
+                <div class="stat-change">↑ 6 new this week</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Conversion Rate</div>
+                <div class="stat-value" id="conversion-rate">8.4%</div>
+                <div class="stat-change">↑ 1.2% improvement</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">D33J Rewards Distributed</div>
+                <div class="stat-value" id="rewards">52,340</div>
+                <div class="stat-change">↑ 8.7K this week</div>
+            </div>
+        </div>
+
+        <div class="agents-section">
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-name">🎮 MMO Customer Agent</div>
+                    <span class="agent-status active">ACTIVE</span>
+                </div>
+                <div class="stat-label">Performance Score</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 87%;"></div>
+                </div>
+                <div class="agent-metrics">
+                    <div class="metric">
+                        <div class="metric-value">1,247</div>
+                        <div class="metric-label">Leads</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">9.2%</div>
+                        <div class="metric-label">Conv. Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">12,450</div>
+                        <div class="metric-label">D33J Earned</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">87</div>
+                        <div class="metric-label">Reputation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-name">🛍️ E-Commerce Client Agent</div>
+                    <span class="agent-status active">ACTIVE</span>
+                </div>
+                <div class="stat-label">Performance Score</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                </div>
+                <div class="agent-metrics">
+                    <div class="metric">
+                        <div class="metric-value">534</div>
+                        <div class="metric-label">Leads</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">7.1%</div>
+                        <div class="metric-label">Conv. Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">18,920</div>
+                        <div class="metric-label">D33J Earned</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">78</div>
+                        <div class="metric-label">Reputation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-name">🎨 Arts Marketing Agent</div>
+                    <span class="agent-status active">ACTIVE</span>
+                </div>
+                <div class="stat-label">Performance Score</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 92%;"></div>
+                </div>
+                <div class="agent-metrics">
+                    <div class="metric">
+                        <div class="metric-value">2.8M</div>
+                        <div class="metric-label">Reach</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">4.5%</div>
+                        <div class="metric-label">Eng. Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">8,740</div>
+                        <div class="metric-label">D33J Earned</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">92</div>
+                        <div class="metric-label">Reputation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-name">💼 Investor Relations Agent</div>
+                    <span class="agent-status active">ACTIVE</span>
+                </div>
+                <div class="stat-label">Performance Score</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%;"></div>
+                </div>
+                <div class="agent-metrics">
+                    <div class="metric">
+                        <div class="metric-value">87</div>
+                        <div class="metric-label">Investors</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">23</div>
+                        <div class="metric-label">Meetings</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">12,230</div>
+                        <div class="metric-label">D33J Earned</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">85</div>
+                        <div class="metric-label">Reputation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-title">📊 Performance Trends (Last 30 Days)</div>
+            <canvas id="performance-chart" width="800" height="300"></canvas>
+        </div>
+
+        <div class="activity-log">
+            <div class="chart-title">🔔 Recent Activity</div>
+
+            <div class="log-item">
+                <div class="log-time">2 minutes ago</div>
+                <div class="log-message">🎮 MMO Customer Agent: 12 new leads qualified on Discord</div>
+            </div>
+
+            <div class="log-item">
+                <div class="log-time">15 minutes ago</div>
+                <div class="log-message">💰 Reward distributed: 50 D33J to E-Commerce Agent for client acquisition</div>
+            </div>
+
+            <div class="log-item">
+                <div class="log-time">32 minutes ago</div>
+                <div class="log-message">🎨 Arts Marketing Agent: Campaign reached 50K impressions on Instagram</div>
+            </div>
+
+            <div class="log-item">
+                <div class="log-time">1 hour ago</div>
+                <div class="log-message">💼 Investor Relations Agent: Meeting scheduled with Crypto Gaming Fund</div>
+            </div>
+
+            <div class="log-item">
+                <div class="log-time">2 hours ago</div>
+                <div class="log-message">🧠 ML Model: Lead scoring model retrained with 1,000 new data points</div>
+            </div>
+
+            <div class="controls">
+                <button class="btn-primary">🔄 Refresh Data</button>
+                <button class="btn-secondary">⚙️ Configure Agents</button>
+                <button class="btn-secondary">📥 Export Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulated real-time updates
+        function updateMetrics() {
+            const totalLeads = document.getElementById('total-leads');
+            const currentValue = parseInt(totalLeads.textContent.replace(',', ''));
+            totalLeads.textContent = (currentValue + Math.floor(Math.random() * 5)).toLocaleString();
+        }
+
+        // Update every 5 seconds
+        setInterval(updateMetrics, 5000);
+
+        // Add activity log item
+        function addLogItem(message) {
+            const log = document.querySelector('.activity-log');
+            const newItem = document.createElement('div');
+            newItem.className = 'log-item';
+            newItem.innerHTML = `
+                <div class="log-time">Just now</div>
+                <div class="log-message">${message}</div>
+            `;
+            log.insertBefore(newItem, log.children[1]);
+        }
+
+        // Simulate new activities
+        const activities = [
+            "🎮 MMO Customer Agent: New lead qualified",
+            "🛍️ E-Commerce Agent: Client meeting scheduled",
+            "🎨 Arts Marketing Agent: Content viral on TikTok",
+            "💼 Investor Relations Agent: Pitch deck sent"
+        ];
+
+        setInterval(() => {
+            const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+            addLogItem(randomActivity);
+        }, 30000);
+
+        console.log("✅ DeeJae LeEtta Network Dashboard Loaded");
+        console.log("🌐 Monitoring 4 AI agents in real-time");
+    </script>
+</body>
+</html>
