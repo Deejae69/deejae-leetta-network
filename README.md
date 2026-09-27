@@ -1,84 +1,110 @@
-# DeeJae LeEtta Network 🌐
+# DeeJae LeEtta Network
 
-> **Decentralized professional networking powered by the Ethereum blockchain and D33J coin.**
+A decentralized digital network for creators, artists, musicians, builders, and collaborators. This repository now includes the foundational blockchain and network layer for the platform, with room for growth into a creator economy, crypto rewards system, marketplace, and collaboration infrastructure.
+
+## Vision
+
+DeeJae LeEtta Network is a creator-first network where people can:
+- connect and collaborate
+- showcase art, music, and projects
+- trade digital products and services
+- earn ecosystem value through creator activity
+- access a governance and rewards model powered by crypto
+- build a global community rooted in love, growth, and progress
+
+## What is included
+
+This repo now includes:
+- Solidity smart contracts for token, verification, and marketplace logic
+- Hardhat deployment setup for Ethereum-compatible chains
+- a simple frontend launch page and signup flow
+- API/service structure for future network integrations
+- a roadmap for expanding into community features, DAO governance, and digital economy tools
+
+## Blockchain foundation
+
+### Contracts
+- `contracts/D33JToken.sol` — ERC-20 token for network value, governance, and rewards
+- `contracts/CreatorRegistry.sol` — creator identity and verification management
+- `contracts/CreatorMarketplace.sol` — digital product and service marketplace with crypto transactions
+
+### Deployment and tooling
+- `hardhat.config.js` — Hardhat configuration for local and test networks
+- `package.json` — project dependencies and scripts
+- `scripts/deploy.js` — deployment helper for the network contracts
+
+## Frontend starter
+
+The repo includes a lightweight landing page and signup starter in:
+- `frontend/index.html`
+- `frontend/styles.css`
+- `frontend/app.js`
+
+This gives you a web presence for the network while the full production app grows.
+
+## Local development
+
+### 1) Install blockchain tooling
+```bash
+npm install
+```
+
+### 2) Start local blockchain
+```bash
+npx hardhat node
+```
+
+### 3) Deploy contracts
+In another terminal:
+```bash
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+### 4) Serve the landing page
+From the repo root:
+```bash
+python3 -m http.server 8000 --directory frontend
+```
+
+Then open:
+```text
+http://localhost:8000
+```
+
+## Core token concept
+
+The network is designed around ecosystem value creation:
+- creators earn rewards for contribution and participation
+- users can support creators through transactions and donations
+- digital products and services can be traded in the marketplace
+- token utility can expand into governance, access, and creator benefits
+
+## Next expansion areas
+
+Planned next steps include:
+- creator dashboard and profile system
+- on-chain reputation and verification layers
+- staking and rewards engine
+- DAO voting and governance portal
+- digital art/music commerce flow
+- wallets and cross-chain support
+- collaboration tooling for teams and projects
+
+## Important note
+
+This is a foundation for product development and experimentation. Token economics, governance, and legal compliance should be reviewed carefully before public launch.
+
+## Project status
+
+- [x] Network concept and direction defined
+- [x] Blockchain foundation created
+- [x] Public repo established
+- [x] Startup landing page and signup starter added
+- [ ] Full production app and creator dashboard
+- [ ] Wallet auth and user onboarding flow
+- [ ] DAO governance implementation
+- [ ] Advanced marketplace features and monetization engine
 
 ---
 
-## What is the DeeJae LeEtta Network?
-
-The DeeJae LeEtta Network is a next-generation professional networking platform built on Ethereum. Unlike traditional platforms that harvest your data and rent you your connections, we give users true ownership over their professional identity — on-chain, verifiable, and censorship-resistant.
-
-## D33J Coin 💰
-
-**D33J** is an ERC-20 utility and governance token on the Ethereum network.
-
-| Property | Details |
-|----------|---------|
-| Token Name | D33J Coin |
-| Standard | ERC-20 |
-| Blockchain | Ethereum |
-| Use Case | Utility, Governance, Rewards |
-
-### D33J Coin Utility
-- 🔐 Access premium network features
-- 🗳️ Vote on network governance decisions
-- 🤝 Peer-to-peer rewards between members
-- 📈 DeFi integrations (staking, liquidity)
-
-## Key Features
-
-- **On-Chain Identity** — Own your professional reputation on Ethereum
-- **Community Governance** — D33J holders shape the future of the network
-- **DeFi Ready** — Fully composable with the Ethereum DeFi ecosystem
-- **MMO Gaming Integration** — D33J coin powers in-game economies with Reown wallet support
-- **AI Growth Agent** — Learns from campaign results to improve outreach and acquisition
-
-## Global Improvement Blueprint
-
-To support the upcoming MMO and grow **deejaeleetta.store** + **deejaeleetta.club**, the network will evolve in four connected layers:
-
-1. **Self-Learning AI Agency**
-   - Track campaigns (social posts, ads, partnerships, newsletters)
-   - Score channels by conversion (wishlist signups, store purchases, club joins)
-   - Automatically prioritize highest-performing audience segments
-
-2. **Blockchain Trust + Rewards**
-   - Use on-chain reputation for creators, partners, and ambassadors
-   - Reward referrals and verified promotion activity with D33J utility incentives
-   - Publish transparent campaign and treasury milestones for community trust
-
-3. **Customer Acquisition Engine**
-   - MMO-focused funnels: teaser drops, early-access forms, and community quests
-   - Cross-promotion of arts/music into MMO worldbuilding campaigns
-   - Unified CTA flow into deejaeleetta.store and deejaeleetta.club
-
-4. **Investor Readiness**
-   - Maintain a public traction dashboard (users, retention, revenue signals)
-   - Define milestone-based funding asks tied to product delivery
-   - Keep a concise investor packet with token utility, roadmap, and growth metrics
-
-## Roadmap
-
-- [x] D33J Coin deployed on Ethereum
-- [x] DeeJae LeEtta Network launch
-- [ ] AI customer-acquisition agent (MVP)
-- [ ] Cross-platform promotion pipeline for art, music, and MMO
-- [ ] deejaeleetta.store + deejaeleetta.club conversion dashboard
-- [ ] Investor traction dashboard + funding packet
-- [ ] CoinGecko & CoinMarketCap listing
-- [ ] Community governance portal
-- [ ] MMO game beta with D33J in-game currency
-- [ ] Solar farming & data center expansion (Uyo, Nigeria)
-- [ ] DeFi staking launch
-
-## Community
-
-- 🐦 Twitter/X: [@DeeJaeLeEtta](https://twitter.com/DeeJaeLeEtta)
-- 💼 LinkedIn: DeeJae LeEtta Network
-- 📸 Instagram: @DeeJaeLeEtta
-
----
-
-*D33J coin is a utility token. This is not financial advice.*
-
-**© 2026 DeeJae LeEtta Network. All rights reserved.**
+Built for the DeeJae LeEtta Network vision: building together, united under love, growth, and progress.
